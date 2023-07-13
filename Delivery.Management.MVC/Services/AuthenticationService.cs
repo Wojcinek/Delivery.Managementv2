@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Delivery.Management.MVC.Contracts;
+using Delivery.Management.MVC.Models;
 using Delivery.Management.MVC.Services.Base;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -14,9 +15,10 @@ namespace Delivery.Management.MVC.Services
         private readonly IMapper _mapper;
         private JwtSecurityTokenHandler _tokenHandler;
 
-        public AuthenticationService(IClient client, ILocalStorageService localStorage, IHttpContextAccessor httpContextAccessor): base(client, localStorage)
+        public AuthenticationService(IClient client, ILocalStorageService localStorage, IHttpContextAccessor httpContextAccessor, IMapper mapper): base(client, localStorage)
         {
             _httpContextAccessor = httpContextAccessor;
+            _mapper = mapper;
             _tokenHandler = new JwtSecurityTokenHandler();
         }
 
@@ -51,13 +53,14 @@ namespace Delivery.Management.MVC.Services
             await _httpContextAccessor.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
 
-        public async Task<bool> Register(string firstName, string lastName, string userName, string email, string password)
+        public async Task<bool> Register(RegisterVM registration)
         {
-            RegistrationRequest registrationRequest = new() { FirstName = firstName, LastName = lastName, UserName = userName, Email = email, Password=password };
+            RegistrationRequest registrationRequest = _mapper.Map<RegistrationRequest>(registration);
             var response = await _client.RegisterAsync(registrationRequest);
 
             if (!string.IsNullOrEmpty(response.UserId))
             {
+                await Authenticate(registration.Email, registration.Password);
                 return true;
             }
             return false;

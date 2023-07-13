@@ -21,10 +21,12 @@ namespace Delivery.Management.MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM login, string returnUrl)
         {
+
             returnUrl ??= Url.Content("~/");
             var isLoggedIn = await _authService.Authenticate(login.Email, login.Password);
-            if (isLoggedIn) 
+            if (isLoggedIn)
                 return LocalRedirect(returnUrl);
+
 
             ModelState.AddModelError("", "Log in Attempt Failed. Please try Again");
             return View(login);
@@ -35,6 +37,31 @@ namespace Delivery.Management.MVC.Controllers
             return View();
         }
 
-        
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterVM registration)
+        {
+            if (ModelState.IsValid)
+            {
+                var returnUrl = Url.Content("~/");
+                var isCreated = await _authService.Register(registration);
+                if (isCreated)
+                {
+                    return LocalRedirect(returnUrl);
+                }
+            }
+
+            ModelState.AddModelError("", "Registration attempt failed. Please try again.");
+            return View(registration);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout(string returnUrl)
+        {
+            returnUrl ??= Url.Content("~/");
+            await _authService.Logout();
+            return LocalRedirect(returnUrl);
+        }
+
     }
 }

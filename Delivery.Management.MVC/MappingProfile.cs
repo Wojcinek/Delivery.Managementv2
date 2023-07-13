@@ -10,6 +10,7 @@ namespace Delivery.Management.MVC
         {
             CreateMap<CreateDeliveryAllocationDto, CreateDeliveryAllocationVM>().ReverseMap();
             CreateMap<DeliveryAllocationDto, DeliveryAllocationVM>().ReverseMap();
+            CreateMap<RegisterVM, RegistrationRequest>().ReverseMap();
         }
     }
 }

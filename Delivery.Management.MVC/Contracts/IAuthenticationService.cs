@@ -1,5 +1,6 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using Delivery.Management.MVC.Models;
 
 namespace Delivery.Management.MVC.Contracts
 {
@@ -7,7 +8,7 @@ namespace Delivery.Management.MVC.Contracts
     {
         Task<bool> Authenticate(string email, string password);
 
-        Task<bool> Register(string firstName, string lastName, string userName, string email, string password);
+        Task<bool> Register(RegisterVM registration);
 
         Task Logout();
 

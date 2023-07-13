@@ -13,7 +13,7 @@ namespace Delivery.Management.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+
     public class DeliveryRequestsController : ControllerBase
     {
         public readonly IMediator _mediator;

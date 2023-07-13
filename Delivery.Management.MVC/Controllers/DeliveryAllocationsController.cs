@@ -1,10 +1,12 @@
 ﻿using Delivery.Management.MVC.Contracts;
 using Delivery.Management.MVC.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Delivery.Management.MVC.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class DeliveryAllocationsController : Controller
     {
         private readonly IDeliveryAllocationService _deliveryAllocationRepository;
