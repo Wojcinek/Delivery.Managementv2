@@ -28,6 +28,7 @@ namespace Delivery.Management.MVC.Services
             {
                 var response = new Response<int>();
                 CreateDeliveryAllocationDto createDeliveryAllocation = _mapper.Map<CreateDeliveryAllocationDto>(deliveryAllocation);
+                AddBearerToken();
                 var apiResponse = await _client.DeliveryAllocationsPOSTAsync(createDeliveryAllocation);
                 if (apiResponse.Success)
                 {
@@ -53,6 +54,7 @@ namespace Delivery.Management.MVC.Services
         {
             try
             {
+                AddBearerToken();
                 await _client.DeliveryAllocationsDELETEAsync(id);
                 return new Response<int>() { Success = true };
             }
@@ -64,12 +66,14 @@ namespace Delivery.Management.MVC.Services
 
         public async Task<DeliveryAllocationVM> GetDeliveryAllocationDetails(int id)
         {
+            AddBearerToken();
             var deliveryAllocation = await _client.DeliveryAllocationsGETAsync(id);
             return _mapper.Map<DeliveryAllocationVM>(deliveryAllocation);
         }
 
         public async Task<List<DeliveryAllocationVM>> GetDeliveryAllocations()
         {
+            AddBearerToken();
             var deliveryAllocations = await _client.DeliveryAllocationsAllAsync();
             return _mapper.Map<List<DeliveryAllocationVM>>(deliveryAllocations);
         }
@@ -79,6 +83,7 @@ namespace Delivery.Management.MVC.Services
             try
             {
                 DeliveryAllocationDto deliveryAllocationDto = _mapper.Map<DeliveryAllocationDto>(deliveryAllocation);
+                AddBearerToken();
                 await _client.DeliveryAllocationsPUTAsync(id.ToString(), deliveryAllocationDto);
                 return new Response<int>() { Success = true };
             }
