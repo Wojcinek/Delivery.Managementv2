@@ -23,8 +23,32 @@ namespace Delivery.Management.Persistence.Configurations.Entities
                 new DeliveryAllocation
                 {
                     Id = 2,
+                    Warehouse = "Warehouse 1",
+                    Section = "2"
+                },
+                new DeliveryAllocation
+                {
+                    Id = 3,
+                    Warehouse = "Warehouse 1",
+                    Section = "3"
+                },
+                new DeliveryAllocation
+                {
+                    Id = 4,
+                    Warehouse = "Warehouse 2",
+                    Section = "1"
+                },
+                new DeliveryAllocation
+                {
+                    Id = 5,
                     Warehouse = "Warehouse 2",
                     Section = "2"
+                },
+                new DeliveryAllocation
+                {
+                    Id = 6,
+                    Warehouse = "Warehouse 2",
+                    Section = "3"
                 });
 
         }

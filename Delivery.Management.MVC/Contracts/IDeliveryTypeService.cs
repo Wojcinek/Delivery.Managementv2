@@ -1,6 +1,7 @@
 ﻿namespace Delivery.Management.MVC.Contracts
 {
-    public class IDeliveryTypeService
+    public interface IDeliveryTypeService
     {
+       
     }
 }
