@@ -29,6 +29,7 @@ namespace Delivery.Management.Identity
                 .AddEntityFrameworkStores<DeliveryManagementIdentityDbContext>().AddDefaultTokenProviders();
 
             services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IUserService, UserService>();
 
             services.AddAuthentication(options =>
             {
