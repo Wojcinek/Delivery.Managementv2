@@ -99,7 +99,7 @@ namespace Delivery.Management.Identity.Migrations
                         {
                             Id = "8e556781-b24d-4443-a1c6-9424d048cdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "70a8634f-ec5a-464f-aa13-ce567ed6c4dd",
+                            ConcurrencyStamp = "fbc868fc-b9ae-4aa8-b4fb-5426ae1e9045",
                             Email = "admin@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "System",
@@ -107,9 +107,9 @@ namespace Delivery.Management.Identity.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELgFS0D7NXmPzbDARCV0huxUgS3ivxZYefg/fhiVcCZq2wR0M0t6cdQ4j3cH9uxWyQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAT2GKJwTD3r7zKy5HJov2jAHxdWRpNGpgRhuOCfNY4kD+mv2zhrBIVgIhRuTaJg0g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "49744e89-5e42-42de-9e65-4c756b21f1e5",
+                            SecurityStamp = "a2ac788b-08cd-4df0-97b0-53e5c5437adf",
                             TwoFactorEnabled = false,
                             UserName = "admin@localhost.com"
                         },
@@ -117,7 +117,7 @@ namespace Delivery.Management.Identity.Migrations
                         {
                             Id = "2b786231-a24d-4113-a1c6-7454s043cab9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6cfdbefd-fd28-4f73-944c-558d47c06cad",
+                            ConcurrencyStamp = "dd96b267-f69f-4f08-aa0c-c8fe9928375e",
                             Email = "user@localhost.com",
                             EmailConfirmed = true,
                             FirstName = "System",
@@ -125,9 +125,9 @@ namespace Delivery.Management.Identity.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST.COM",
                             NormalizedUserName = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFwnJH5WMh5vN9iS5tqLAVfsvBP2MjtDfeSqGDtMMJy7MxQUOQWdq2MVh0SF7ORNIg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDCn6RQlE8hfqIDr/dfYGjkp7ojvrsCcq+RdTf+wQQsPNU/c8UQp1pzNBWbaDHTtqg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "90fa63a6-aa5a-4adb-97c8-1bb92be9c667",
+                            SecurityStamp = "dc2bc8b5-4fb9-45cb-bd2e-f1de28fd3af4",
                             TwoFactorEnabled = false,
                             UserName = "user@localhost.com"
                         });
@@ -163,14 +163,14 @@ namespace Delivery.Management.Identity.Migrations
                         new
                         {
                             Id = "cac43a6e-f7bb-4448-baaf-1add431ccbbf",
-                            ConcurrencyStamp = "103a583e-97c5-48d2-88b6-ee2db2ea20d3",
+                            ConcurrencyStamp = "8af43f65-3d23-4785-bc01-f6624bcfc038",
                             Name = "Employee",
                             NormalizedName = "EMPLOYEE"
                         },
                         new
                         {
                             Id = "cac43a6e-f7bb-4448-baaf-1add431ffbbf",
-                            ConcurrencyStamp = "9f34d89d-5fc4-4036-bf40-e31765fb4ba8",
+                            ConcurrencyStamp = "e14dd419-15ff-4b1a-8865-f22a1d6aa67c",
                             Name = "Administrator",
                             NormalizedName = "Administrator"
                         });

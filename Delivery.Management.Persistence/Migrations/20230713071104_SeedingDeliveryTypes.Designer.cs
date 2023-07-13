@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Delivery.Management.Persistence.Migrations
 {
     [DbContext(typeof(DeliveryManagementDbContext))]
-    [Migration("20230713061814_SeedingDeliveryTypes")]
+    [Migration("20230713071104_SeedingDeliveryTypes")]
     partial class SeedingDeliveryTypes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
