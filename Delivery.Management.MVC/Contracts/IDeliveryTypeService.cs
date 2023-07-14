@@ -5,7 +5,7 @@ namespace Delivery.Management.MVC.Contracts
 {
     public interface IDeliveryTypeService
     {
-        Task<List<DeliveryTypeVM>> GetDeliveryTypess();
+        Task<List<DeliveryTypeVM>> GetDeliveryTypes();
         Task<DeliveryTypeVM> GetDeliveryTypesDetails(int id);
         Task<Response<int>> CreateDeliveryType(CreateDeliveryTypeVM deliveryType);
         Task<Response<int>> UpdateDeliveryType(int id, DeliveryTypeVM deliveryType);

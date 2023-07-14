@@ -13,7 +13,22 @@ namespace Delivery.Management.Persistence.Configurations.Entities
     {
         public void Configure(EntityTypeBuilder<DeliveryType> builder)
         {
-
+            builder.HasData(
+                new DeliveryType
+                {
+                    Id = 10,
+                    Name = "Unloading"
+                },
+                new DeliveryType
+                {
+                    Id = 11,
+                    Name = "Preparing"
+                },
+                new DeliveryType
+                {
+                    Id = 12,
+                    Name = "Sent"
+                });
         }
     }
 }

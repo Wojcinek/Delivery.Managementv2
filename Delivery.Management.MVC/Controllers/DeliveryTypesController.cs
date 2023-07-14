@@ -1,50 +1,47 @@
 ﻿using Delivery.Management.MVC.Contracts;
 using Delivery.Management.MVC.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace Delivery.Management.MVC.Controllers
 {
-    [Authorize(Roles = "Administrator")]
-    public class DeliveryAllocationsController : Controller
+    public class DeliveryTypesController : Controller
     {
-        private readonly IDeliveryAllocationService _deliveryAllocationRepository;
+        private readonly IDeliveryTypeService _deliveryTypeRepository;
 
-        public DeliveryAllocationsController(IDeliveryAllocationService deliveryAllocationRepository)
+        public DeliveryTypesController(IDeliveryTypeService deliveryTypeRepository)
         {
-            _deliveryAllocationRepository = deliveryAllocationRepository;
+            _deliveryTypeRepository = deliveryTypeRepository;
         }
 
-        // GET: DeliveryAllocationsController
+        // GET: DeliveryTypesController
         public async Task<ActionResult> Index()
         {
-            var model = await _deliveryAllocationRepository.GetDeliveryAllocations();
+            var model = await _deliveryTypeRepository.GetDeliveryTypes();
             return View(model);
         }
 
-        // GET: DeliveryAllocationsController/Details/5
+        // GET: DeliveryTypesController/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            var model = await _deliveryAllocationRepository.GetDeliveryAllocationDetails(id);
+            var model = await _deliveryTypeRepository.GetDeliveryTypesDetails(id);
             return View(model);
         }
 
-        // GET: DeliveryAllocationsController/Create
+        // GET: DeliveryTypesController/Create
         public async Task<ActionResult> Create()
         {
             return View();
         }
 
-        // POST: DeliveryAllocationsController/Create
+        // POST: DeliveryTypesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(CreateDeliveryAllocationVM deliveryAllocation)
+        public async Task<ActionResult> Create(CreateDeliveryTypeVM deliveryType)
         {
             try
             {
-                var response = await _deliveryAllocationRepository.CreateDeliveryAllocation(deliveryAllocation);
+                var response = await _deliveryTypeRepository.CreateDeliveryType(deliveryType);
                 if (response.Success)
                 {
                     return RedirectToAction(nameof(Index));
@@ -55,24 +52,24 @@ namespace Delivery.Management.MVC.Controllers
             {
                 ModelState.AddModelError("", ex.Message);
             }
-            return View(deliveryAllocation);
+            return View(deliveryType);
         }
 
-        // GET: DeliveryAllocationsController/Edit/5
+        // GET: DeliveryTypesController/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
-            var model = await _deliveryAllocationRepository.GetDeliveryAllocationDetails(id);
+            var model = await _deliveryTypeRepository.GetDeliveryTypesDetails(id);
             return View(model);
         }
 
-        // POST: DeliveryAllocationsController/Edit/5
+        // POST: DeliveryTypesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(int id, DeliveryAllocationVM deliveryAllocation)
+        public async Task<ActionResult> Edit(int id, DeliveryTypeVM deliveryType)
         {
             try
             {
-                var response = await _deliveryAllocationRepository.UpdateDeliveryAllocation(id, deliveryAllocation);
+                var response = await _deliveryTypeRepository.UpdateDeliveryType(id, deliveryType);
                 if (response.Success)
                 {
                     return RedirectToAction(nameof(Index));
@@ -83,28 +80,27 @@ namespace Delivery.Management.MVC.Controllers
             {
                 ModelState.AddModelError("", ex.Message);
             }
-            return View(deliveryAllocation);
+            return View(deliveryType);
         }
 
-        // POST: DeliveryAllocationsController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        // GET: DeliveryTypesController/Delete/5
         public async Task<ActionResult> Delete(int id)
         {
             try
             {
-                var response = await _deliveryAllocationRepository.DeleteDeliveryAllocation(id);
+                var response = await _deliveryTypeRepository.DeleteDeliveryType(id);
                 if (response.Success)
                 {
                     return RedirectToAction(nameof(Index));
                 }
                 ModelState.AddModelError("", response.ValidationErrors);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
             return View();
         }
+
     }
 }

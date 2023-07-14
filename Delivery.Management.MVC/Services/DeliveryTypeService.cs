@@ -67,7 +67,7 @@ namespace Delivery.Management.MVC.Services
            return _mapper.Map<DeliveryTypeVM>(deliveryType);
         }
 
-        public async Task<List<DeliveryTypeVM>> GetDeliveryTypess()
+        public async Task<List<DeliveryTypeVM>> GetDeliveryTypes()
         {
             AddBearerToken();
             var deliveryTypes = await _client.DeliveryTypesAllAsync();
