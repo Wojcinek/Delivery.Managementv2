@@ -16,39 +16,33 @@ namespace Delivery.Management.Persistence.Configurations.Entities
             builder.HasData(
                 new DeliveryAllocation
                 {
-                    Id = 1,
-                    Warehouse = "Warehouse 1",
-                    Section = "1"
-                },
-                new DeliveryAllocation
-                {
-                    Id = 2,
-                    Warehouse = "Warehouse 1",
-                    Section = "2"
-                },
-                new DeliveryAllocation
-                {
-                    Id = 3,
-                    Warehouse = "Warehouse 1",
+                    Id = 101,
+                    Warehouse = "Standard",
                     Section = "3"
                 },
                 new DeliveryAllocation
                 {
-                    Id = 4,
-                    Warehouse = "Warehouse 2",
-                    Section = "1"
-                },
-                new DeliveryAllocation
-                {
-                    Id = 5,
-                    Warehouse = "Warehouse 2",
+                    Id = 102,
+                    Warehouse = "Express",
                     Section = "2"
                 },
                 new DeliveryAllocation
                 {
-                    Id = 6,
-                    Warehouse = "Warehouse 2",
-                    Section = "3"
+                    Id = 103,
+                    Warehouse = "Palette",
+                    Section = "5"
+                },
+                new DeliveryAllocation
+                {
+                    Id = 104,
+                    Warehouse = "International By Plane",
+                    Section = "14"
+                },
+                new DeliveryAllocation
+                {
+                    Id = 105,
+                    Warehouse = "International by Ship",
+                    Section = "45"
                 });
 
         }

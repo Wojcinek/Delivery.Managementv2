@@ -42,8 +42,9 @@ namespace Delivery.Management.Application.Features.DeliveryRequests.Handlers.Com
             }
             else 
             { 
-                var deliveryRequest = _mapper.Map<DeliveryRequest>(request.DeliveryRequestDto); 
-
+                var deliveryRequest = _mapper.Map<DeliveryRequest>(request.DeliveryRequestDto);
+                //deliveryRequest.DeliveryTypeId = request.DeliveryRequestDto.DeliveryTypeId;
+                //deliveryRequest.DeliveryAllocationId = request.DeliveryRequestDto.DeliveryAllocationId;
                 deliveryRequest = await _deliveryRequestRepository.AddAsync(deliveryRequest);
 
                 response.Success = true;

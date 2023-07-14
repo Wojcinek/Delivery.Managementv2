@@ -16,17 +16,17 @@ namespace Delivery.Management.Persistence.Configurations.Entities
             builder.HasData(
                 new DeliveryType
                 {
-                    Id = 10,
+                    Id = 1000,
                     Name = "Unloading"
                 },
                 new DeliveryType
                 {
-                    Id = 11,
+                    Id = 1001,
                     Name = "Preparing"
                 },
                 new DeliveryType
                 {
-                    Id = 12,
+                    Id = 1002,
                     Name = "Sent"
                 });
         }
