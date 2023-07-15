@@ -77,7 +77,7 @@ namespace Delivery.Management.MVC.Services
         {
             try
             {
-                DeliveryRequestDto deliveryRequestDto = _mapper.Map<DeliveryRequestDto>(deliveryRequest);
+                UpdateDeliveryRequestDto deliveryRequestDto = _mapper.Map<UpdateDeliveryRequestDto>(deliveryRequest);
                 AddBearerToken();
                 await _client.DeliveryRequestsPUTAsync(id, deliveryRequestDto);
                 return new Response<int>() { Success = true };
