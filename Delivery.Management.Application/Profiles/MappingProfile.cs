@@ -19,9 +19,13 @@ namespace Delivery.Management.Application.Profiles
             CreateMap<DeliveryAllocation, DeliveryAllocationDto>().ReverseMap();
             CreateMap<DeliveryType, DeliveryTypeDto>().ReverseMap();
 
+            CreateMap<DeliveryRequest, DeliveryRequestListDto>().ReverseMap();
+
             CreateMap<DeliveryRequest, CreateDeliveryRequestDto>().ReverseMap();
             CreateMap<DeliveryAllocation, CreateDeliveryAllocationDto>().ReverseMap();
             CreateMap<DeliveryType, CreateDeliveryTypeDto>().ReverseMap();
+
+
         }
     }
 }

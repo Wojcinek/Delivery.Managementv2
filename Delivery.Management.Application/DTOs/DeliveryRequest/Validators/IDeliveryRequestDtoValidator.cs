@@ -41,7 +41,7 @@ namespace Delivery.Management.Application.DTOs.DeliveryRequest.Validators
             RuleFor(p => p.HouseNumber)
                         .NotEmpty().WithMessage("{PropertyName} is required.")
                         .NotNull();
-    
+
 
             RuleFor(p => p.DeliveryAllocationId)
                     .GreaterThan(0)

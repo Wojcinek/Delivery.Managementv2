@@ -3,6 +3,7 @@ using Delivery.Management.Application.Features.DeliveryAllocations.Requests.Quer
 using Delivery.Management.Application.Features.DeliveryRequests.Requests.Command;
 using Delivery.Management.Application.Features.DeliveryRequests.Requests.Queries;
 using Delivery.Management.Application.Features.DeliveryTypes.Requests.Commands;
+using Delivery.Management.Application.Responses;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -34,13 +35,13 @@ namespace Delivery.Management.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<DeliveryRequestDto>> Get(int id)
         {
-            var deliveryAllocation = await _mediator.Send(new GetDeliveryRequestDetailRequest());
+            var deliveryAllocation = await _mediator.Send(new GetDeliveryRequestDetailRequest { Id = id});
             return Ok(deliveryAllocation);
         }
 
         // POST api/<DeliveryRequestsController>
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] CreateDeliveryRequestDto deliveryRequest)
+        public async Task<ActionResult<BaseCommandResponse>> Post([FromBody] CreateDeliveryRequestDto deliveryRequest)
         {
             var command = new CreateDeliveryRequestCommand { DeliveryRequestDto = deliveryRequest };
             var response = await _mediator.Send(command);

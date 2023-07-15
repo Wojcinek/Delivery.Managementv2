@@ -61,7 +61,7 @@ void AddSwaggerDoc(IServiceCollection services)
         c.SwaggerDoc("v1", new OpenApiInfo
         {
             Version = "v1",
-            Title = "EmployeeManagement Api",
+            Title = "DeliveryManagement Api",
 
         });
 

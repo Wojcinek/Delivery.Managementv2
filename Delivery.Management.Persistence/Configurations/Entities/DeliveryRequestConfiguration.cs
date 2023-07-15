@@ -13,7 +13,29 @@ namespace Delivery.Management.Persistence.Configurations.Entities
     {
         public void Configure(EntityTypeBuilder<DeliveryRequest> builder)
         {
-
+            builder.HasData(
+               new DeliveryRequest
+               {
+                   Id = 1,
+                   DeliveryTypeId = 1000,
+                   DeliveryAllocationId = 101,
+                   City = "Cracow",
+                   Street = "Zielona",
+                   HouseNumber = 12,
+                   ZipCode = "30‑063",
+                   RequestComments = "No Comment"
+               },
+               new DeliveryRequest
+               {
+                   Id = 2,
+                   DeliveryTypeId = 1001,
+                   DeliveryAllocationId = 102,
+                   City = "Cracow",
+                   Street = "Zielona",
+                   HouseNumber = 12,
+                   ZipCode = "30‑063",
+                   RequestComments = "No Comment"
+               });
         }
     }
 }

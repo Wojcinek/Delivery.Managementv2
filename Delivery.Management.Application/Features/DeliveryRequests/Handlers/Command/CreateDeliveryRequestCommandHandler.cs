@@ -21,6 +21,7 @@ namespace Delivery.Management.Application.Features.DeliveryRequests.Handlers.Com
         private readonly IDeliveryAllocationRepository _deliveryAllocationRepository;
         private readonly IDeliveryTypeRepository _deliveryTypeRepository;
 
+
         public CreateDeliveryRequestCommandHandler(IDeliveryRequestRepository deliveryRequestRepository, IMapper mapper, IDeliveryAllocationRepository deliveryAllocationRepository, IDeliveryTypeRepository deliveryTypeRepository)
         {
             _deliveryRequestRepository = deliveryRequestRepository;
@@ -43,8 +44,10 @@ namespace Delivery.Management.Application.Features.DeliveryRequests.Handlers.Com
             else 
             { 
                 var deliveryRequest = _mapper.Map<DeliveryRequest>(request.DeliveryRequestDto);
-                //deliveryRequest.DeliveryTypeId = request.DeliveryRequestDto.DeliveryTypeId;
-                //deliveryRequest.DeliveryAllocationId = request.DeliveryRequestDto.DeliveryAllocationId;
+                deliveryRequest.DeliveryTypeId = request.DeliveryRequestDto.DeliveryTypeId;
+                deliveryRequest.DeliveryAllocationId = request.DeliveryRequestDto.DeliveryAllocationId;
+                //deliveryRequest.DeliveryAllocation.Id = request.DeliveryRequestDto.DeliveryAllocationId;
+                //deliveryRequest.DeliveryType.Id = request.DeliveryRequestDto.DeliveryTypeId;
                 deliveryRequest = await _deliveryRequestRepository.AddAsync(deliveryRequest);
 
                 response.Success = true;
