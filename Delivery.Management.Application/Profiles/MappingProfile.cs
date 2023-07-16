@@ -25,6 +25,7 @@ namespace Delivery.Management.Application.Profiles
             CreateMap<DeliveryAllocation, CreateDeliveryAllocationDto>().ReverseMap();
             CreateMap<DeliveryType, CreateDeliveryTypeDto>().ReverseMap();
 
+            CreateMap<DeliveryRequest, UpdateDeliveryRequestDto>().ReverseMap();
 
         }
     }

@@ -43,23 +43,23 @@ namespace Delivery.Management.Application.DTOs.DeliveryRequest.Validators
                         .NotNull();
 
 
-            RuleFor(p => p.DeliveryAllocationId)
-                    .GreaterThan(0)
-                    .MustAsync(async (id, token) =>
-                    {
-                        var deliveryAllocationExists = await _deliveryAllocationRepository.Exists(id);
-                        return !deliveryAllocationExists;
-                    })
-                    .WithMessage("{PropertyName} does not exist.");
+            //RuleFor(p => p.DeliveryAllocationId)
+            //        .GreaterThan(0)
+            //        .MustAsync(async (id, token) =>
+            //        {
+            //            var deliveryAllocationExists = await _deliveryAllocationRepository.Exists(id);
+            //            return !deliveryAllocationExists;
+            //        })
+            //        .WithMessage("{PropertyName} does not exist.");
 
-            RuleFor(p => p.DeliveryTypeId)
-                    .GreaterThan(0)
-                    .MustAsync(async (id, token) =>
-                    {
-                        var deliveryTypeExists = await _deliveryTypeRepository.Exists(id);
-                        return !deliveryTypeExists;
-                    })
-                    .WithMessage("{PropertyName} does not exist.");
+            //RuleFor(p => p.DeliveryTypeId)
+            //        .GreaterThan(0)
+            //        .MustAsync(async (id, token) =>
+            //        {
+            //            var deliveryTypeExists = await _deliveryTypeRepository.Exists(id);
+            //            return !deliveryTypeExists;
+            //        })
+            //        .WithMessage("{PropertyName} does not exist.");
 
         }
     }

@@ -15,11 +15,15 @@ namespace Delivery.Management.Application.Features.DeliveryRequests.Handlers.Que
     {
         private readonly IDeliveryRequestRepository _deliveryRequestRepository;
         private readonly IMapper _mapper;
+        private readonly IDeliveryTypeRepository _deliveryTypeRepository;
+        private readonly IDeliveryAllocationRepository _deliveryAllocationRepository;
 
-        public GetDeliveryRequestDetailRequestHandler(IDeliveryRequestRepository deliveryRequestRepository, IMapper mapper)
+        public GetDeliveryRequestDetailRequestHandler(IDeliveryRequestRepository deliveryRequestRepository, IMapper mapper, IDeliveryTypeRepository deliveryTypeRepository, IDeliveryAllocationRepository deliveryAllocationRepository)
         {
+
             _deliveryRequestRepository = deliveryRequestRepository;
             _mapper = mapper;
+
         }
         public async Task<DeliveryRequestDto> Handle(GetDeliveryRequestDetailRequest request, CancellationToken cancellationToken)
         {

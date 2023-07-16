@@ -61,7 +61,7 @@ namespace Delivery.Management.API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var command = new DeleteDeliveryTypeCommand { Id = id };
+            var command = new DeleteDeliveryRequestCommand { Id = id };
             await _mediator.Send(command);
             return NoContent();
         }

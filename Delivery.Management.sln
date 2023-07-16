@@ -13,17 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{A83D11A7-685A-430B-83E5-509CC5E8A4D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery.Management.Domain", "Delivery.Management.Domain\Delivery.Management.Domain.csproj", "{6929F5A7-7BE4-474C-A721-C7B285D970AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delivery.Management.Domain", "Delivery.Management.Domain\Delivery.Management.Domain.csproj", "{6929F5A7-7BE4-474C-A721-C7B285D970AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery.Management.Application", "Delivery.Management.Application\Delivery.Management.Application.csproj", "{8760FD11-4D37-41BE-9806-27A236E17ABF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delivery.Management.Application", "Delivery.Management.Application\Delivery.Management.Application.csproj", "{8760FD11-4D37-41BE-9806-27A236E17ABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery.Management.API", "Delivery.Management.API\Delivery.Management.API.csproj", "{C5EA213F-ACF4-495D-A2CF-897E5334AA06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delivery.Management.API", "Delivery.Management.API\Delivery.Management.API.csproj", "{C5EA213F-ACF4-495D-A2CF-897E5334AA06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery.Management.Identity", "Delivery.Management.Identity\Delivery.Management.Identity.csproj", "{830C47B8-37DD-452D-B76D-6A6C6EB11C23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delivery.Management.Identity", "Delivery.Management.Identity\Delivery.Management.Identity.csproj", "{830C47B8-37DD-452D-B76D-6A6C6EB11C23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery.Management.Persistence", "Delivery.Management.Persistence\Delivery.Management.Persistence.csproj", "{8F70F711-35CD-4F58-A2EE-3EF86358C805}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delivery.Management.Persistence", "Delivery.Management.Persistence\Delivery.Management.Persistence.csproj", "{8F70F711-35CD-4F58-A2EE-3EF86358C805}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery.Management.MVC", "Delivery.Management.MVC\Delivery.Management.MVC.csproj", "{C3FEBBAA-D653-4971-B265-BDE9CDC35E45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delivery.Management.MVC", "Delivery.Management.MVC\Delivery.Management.MVC.csproj", "{C3FEBBAA-D653-4971-B265-BDE9CDC35E45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D6528F31-7EFD-4F30-A3C2-DC240C814A21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

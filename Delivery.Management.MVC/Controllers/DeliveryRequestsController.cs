@@ -2,16 +2,22 @@
 using Delivery.Management.MVC.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Delivery.Management.MVC.Controllers
 {
     public class DeliveryRequestsController : Controller
     {
         private readonly IDeliveryRequestService _deliveryRequestRepository;
+        private readonly IDeliveryAllocationService _deliveryAllocationRepository;
+        private readonly IDeliveryTypeService _deliveryTypeRepository;
 
-        public DeliveryRequestsController(IDeliveryRequestService deliveryRequestRepository)
+        public DeliveryRequestsController(IDeliveryRequestService deliveryRequestRepository, IDeliveryAllocationService deliveryAllocationRepository, IDeliveryTypeService deliveryTypeRepository)
         {
             _deliveryRequestRepository = deliveryRequestRepository;
+            _deliveryTypeRepository = deliveryTypeRepository;
+            _deliveryAllocationRepository = deliveryAllocationRepository;
+
         }
 
         // GET: DeliveryRequestsController
@@ -83,14 +89,8 @@ namespace Delivery.Management.MVC.Controllers
             return View(deliveryRequest);
         }
 
-        // GET: DeliveryRequestsController/Delete/5
-        //public async Task<ActionResult> Delete(int id)
-        //{
-        //    var model = await _deliveryRequestRepository.DeleteDeliveryRequest(id);
-        //    return View();
-        //}
 
-        // POST: DeliveryRequestsController/Delete/5
+        //POST: DeliveryRequestsController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(int id)

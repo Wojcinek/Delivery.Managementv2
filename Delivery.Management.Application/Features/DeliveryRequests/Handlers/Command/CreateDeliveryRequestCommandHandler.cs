@@ -46,8 +46,6 @@ namespace Delivery.Management.Application.Features.DeliveryRequests.Handlers.Com
                 var deliveryRequest = _mapper.Map<DeliveryRequest>(request.DeliveryRequestDto);
                 deliveryRequest.DeliveryTypeId = request.DeliveryRequestDto.DeliveryTypeId;
                 deliveryRequest.DeliveryAllocationId = request.DeliveryRequestDto.DeliveryAllocationId;
-                //deliveryRequest.DeliveryAllocation.Id = request.DeliveryRequestDto.DeliveryAllocationId;
-                //deliveryRequest.DeliveryType.Id = request.DeliveryRequestDto.DeliveryTypeId;
                 deliveryRequest = await _deliveryRequestRepository.AddAsync(deliveryRequest);
 
                 response.Success = true;

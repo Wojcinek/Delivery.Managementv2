@@ -22,6 +22,10 @@ namespace Delivery.Management.MVC.Models
         [Required]
         public string ZipCode { get; set; }
         public string RequestComments { get; set; }
+
+        public DeliveryAllocationVM DeliveryAllocation { get; set; }
+
+        public DeliveryTypeVM DeliveryType { get; set; }
     }
 
 }
