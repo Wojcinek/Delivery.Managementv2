@@ -1,5 +1,7 @@
-﻿using Delivery.Management.MVC.Contracts;
+﻿using System.Data;
+using Delivery.Management.MVC.Contracts;
 using Delivery.Management.MVC.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -35,6 +37,7 @@ namespace Delivery.Management.MVC.Controllers
         }
 
         // GET: DeliveryRequestsController/Create
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult> Create()
         {
             return View();
@@ -43,6 +46,7 @@ namespace Delivery.Management.MVC.Controllers
         // POST: DeliveryRequestsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult> Create(CreateDeliveryRequestVM deliveryRequest)
         {
             try
@@ -93,6 +97,7 @@ namespace Delivery.Management.MVC.Controllers
         //POST: DeliveryRequestsController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult> Delete(int id)
         {
             try
